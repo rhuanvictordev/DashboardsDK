@@ -6,3 +6,27 @@
 
 <p>Use this area to provide additional information.</p>
 <i class="fa fa-users"></i>
+<button class="btn btn-default" onclick="alertar()">Butao</button>
+
+
+@section scripts {
+    <script>
+        toastr.options = {
+            closeButton: true,
+            progressBar: true,
+            positionClass: "toast-top-right",
+            timeOut: 3000
+        };
+
+        $(document).ready(function () {
+            //toastr.success("Cadastro realizado com sucesso!");
+        });
+
+        function alertar() {
+            toastr.success("Cadastro realizado com sucesso!");
+            toastr.error("Ocorreu um erro!");
+            toastr.warning("Verifique os dados!");
+            toastr.info("Nova informação disponível!");
+        }
+    </script>    
+}
