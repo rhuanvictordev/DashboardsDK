@@ -8,9 +8,9 @@ obj/
 
 
 # Nuget Packages
-packages/
-!packages/build/
-*.nupkg
+#packages/
+#!packages/build/
+#*.nupkg
 
 
 # Publish Output
