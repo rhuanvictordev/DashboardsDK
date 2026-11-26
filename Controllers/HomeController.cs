@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DashboardsDK.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,6 +24,13 @@ namespace DashboardsDK.Controllers
         public ActionResult Graficos()
         {
             return View();
+        }
+
+        public ActionResult Dashboard()
+        {
+            DashboardModel model = new DashboardModel();
+            model.SetorNome = "Teste";
+            return View(model);
         }
     }
 }

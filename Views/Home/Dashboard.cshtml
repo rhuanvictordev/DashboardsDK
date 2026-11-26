@@ -1,0 +1,35 @@
+﻿@model DashboardsDK.Models.DashboardModel
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="container-fluid">
+
+    <h3>@Model.SetorNome</h3>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="Select">Seção</label>
+
+                    @Html.DropDownList("Select", Model.Lista, new { @class = "form-control" })
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+@section scripts {
+    <script>
+
+    </script>
+}
+
+
