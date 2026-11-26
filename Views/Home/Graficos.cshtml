@@ -1,0 +1,319 @@
+﻿
+@{
+    ViewBag.Title = "Graficos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <canvas id="grafico1"></canvas>
+</div>
+
+<div>
+    <canvas id="grafico2"></canvas>
+</div>
+
+<div>
+    <canvas id="grafico3"></canvas>
+</div>
+
+<div>
+    <canvas id="grafico4"></canvas>
+</div>
+
+<div>
+    <canvas id="grafico5"></canvas>
+</div>
+
+<div>
+    <canvas id="grafico6"></canvas>
+</div>
+
+<div>
+    <canvas id="grafico7"></canvas>
+</div>
+
+<div>
+    <canvas id="grafico8"></canvas>
+</div>
+
+
+@section scripts {
+
+    <script>
+
+        const canva1 = document.getElementById('grafico1');
+        new Chart(canva1, {
+            type: 'bar',
+            data: {
+                labels: ['Barra1', 'Barra2', 'Barra3'],
+                datasets: [{
+                    label: 'Quantidade de Nada',
+                    data: [4, 5, 10],
+                    borderColor: 'green',
+                    borderWidth: 2,
+                    backgroundColor: 'green'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                title: {
+                    display: true,
+                    text: 'Grafico 1',
+                    fontSize: 20
+                },
+                legend: {
+                    display: false
+                }
+            },
+            plugins: []
+        });
+
+
+        const canva2 = document.getElementById('grafico2');
+        new Chart(canva2, {
+            type: 'horizontalBar',
+            data: {
+                labels: ['Produto A', 'Produto B', 'Produto C', 'Produto D'],
+                datasets: [{
+                    label: 'Quantidade',
+                    data: [45, 30, 70, 20],
+                    backgroundColor: 'steelblue',
+                    borderColor: 'navy',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Produtos mais vendidos',
+                    fontSize: 20
+                },
+                legend: {
+                    display: false
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        const canva3 = document.getElementById('grafico3');
+        new Chart(canva3, {
+            type: 'line',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+                datasets: [{
+                    label: 'Faturamento',
+                    data: [1200, 1800, 1500, 2500, 3200],
+                    borderColor: 'blue',
+                    backgroundColor: 'rgba(0, 0, 255, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    lineTension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Faturamento mensal',
+                    fontSize: 20
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+
+        const canva4 = document.getElementById('grafico4');
+        new Chart(canva4, {
+            type: 'pie',
+            data: {
+                labels: ['Eletrônicos', 'Alimentos', 'Roupas', 'Outros'],
+                datasets: [{
+                    data: [40, 30, 20, 10],
+                    backgroundColor: [
+                        'blue',
+                        'green',
+                        'orange',
+                        'red'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Vendas por categoria',
+                    fontSize: 20
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        });
+
+        const canva5 = document.getElementById('grafico5');
+        new Chart(canva5, {
+            type: 'doughnut',
+            data: {
+                labels: ['Concluídos', 'Pendentes', 'Cancelados'],
+                datasets: [{
+                    data: [65, 20, 15],
+                    backgroundColor: [
+                        'green',
+                        'orange',
+                        'red'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Status dos pedidos',
+                    fontSize: 20
+                },
+                legend: {
+                    position: 'bottom'
+                },
+                cutoutPercentage: 60
+            }
+        });
+
+
+        const canva6 = document.getElementById('grafico6');
+        new Chart(canva6, {
+            type: 'radar',
+            data: {
+                labels: ['Vendas', 'Estoque', 'Financeiro', 'Atendimento', 'Marketing'],
+                datasets: [{
+                    label: 'Atual',
+                    data: [90, 65, 85, 95, 70],
+                    backgroundColor: 'rgba(0, 128, 0, 0.2)',
+                    borderColor: 'green',
+                    borderWidth: 2
+                }, {
+                    label: 'Anterior',
+                    data: [70, 80, 75, 80, 60],
+                    backgroundColor: 'rgba(0, 0, 255, 0.2)',
+                    borderColor: 'blue',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Desempenho por departamento',
+                    fontSize: 20
+                }
+            }
+        });
+
+
+        const canva7 = document.getElementById('grafico7');
+        new Chart(canva7, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Produtos',
+                    data: [
+                        { x: 10, y: 100 },
+                        { x: 20, y: 80 },
+                        { x: 30, y: 65 },
+                        { x: 40, y: 45 },
+                        { x: 50, y: 30 }
+                    ],
+                    backgroundColor: 'purple',
+                    borderColor: 'purple'
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Preço x Quantidade vendida',
+                    fontSize: 20
+                },
+                scales: {
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Preço'
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Quantidade'
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+
+        const canva8 = document.getElementById('grafico8');
+        new Chart(canva8, {
+            type: 'line',
+            data: {
+                labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'],
+                datasets: [{
+                    label: 'Acessos',
+                    data: [100, 180, 150, 240, 300],
+                    borderColor: 'orange',
+                    backgroundColor: 'rgba(255, 165, 0, 0.3)',
+                    borderWidth: 2,
+                    fill: true,
+                    lineTension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Acessos ao sistema',
+                    fontSize: 20
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+
+    </script>
+
+
+
+
+
+
+
+
+}

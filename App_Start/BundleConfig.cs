@@ -13,6 +13,7 @@ namespace DashboardsDK
             bundles.Add(new ScriptBundle("~/jquery").Include("~/Scripts/jquery-{version}.js"));
             bundles.Add(new ScriptBundle("~/bootstrap").Include("~/Scripts/bootstrap.js"));
             bundles.Add(new ScriptBundle("~/toastr").Include("~/Scripts/toastr.js"));
+            bundles.Add(new ScriptBundle("~/chart_js").Include("~/Scripts/Chart.js"));
 
             // css imports
             bundles.Add(new StyleBundle("~/bundle_css").Include(

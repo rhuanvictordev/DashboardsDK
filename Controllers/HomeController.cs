@@ -19,5 +19,10 @@ namespace DashboardsDK.Controllers
 
             return View();
         }
+
+        public ActionResult Graficos()
+        {
+            return View();
+        }
     }
 }
