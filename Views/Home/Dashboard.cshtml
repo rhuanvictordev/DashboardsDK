@@ -5,24 +5,26 @@
 
 }
 
-<div class="container-fluid">
+<div class="container container-fluid bg-light border">
+    <div class="row">
+        <div class="col col-12">
+            <h3>@Model.SetorNome</h3>
 
-    <h3>@Model.SetorNome</h3>
+            <div class="panel panel-default">
+                <div class="panel-body">
 
-    <div class="panel panel-default">
-        <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="Select">Seção</label>
 
-            <div class="row">
-                <div class="col-md-4">
-                    <label for="Select">Seção</label>
+                            @Html.DropDownList("Select", Model.Lista, new { @class = "form-control" })
+                        </div>
+                    </div>
 
-                    @Html.DropDownList("Select", Model.Lista, new { @class = "form-control" })
                 </div>
             </div>
-
         </div>
     </div>
-
 </div>
 
 
